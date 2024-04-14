@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="arayuz.css">
+
+    <title>Rota Bizz</title>
+</head>
+<style>
+    *{
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background: rgb(52, 52, 54);
+    background-image: url('https://media.istockphoto.com/id/1333161816/tr/foto%C4%9Fraf/istanbul-night-sirkeci-night.jpg?s=612x612&w=0&k=20&c=kjrzh6gLvcn2d9tTowV6ka7B1OCMY0-cR3JtPj9sXSM=');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.row{
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+.card {
+    background: white;
+    padding: .5rem;
+    border: solid 1px #a8a6a6;
+    flex-grow: 1;
+    flex-basis: 500px;
+}
+
+.card img {
+    width: 100%;
+    width: 100%; 
+    max-width: 100%;
+    height: auto;
+}
+
+.card:hover {
+    box-shadow: 10px 10px 20px rgba(27, 26, 26, 0.6);
+    transition: box-shadow 0.3s ease;
+}
+
+.card p {
+    margin-bottom: 0;
+    display: "";
+}
+.header{
+    max-width: 1000px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    background-color: #eee;
+    margin-bottom: 1rem;
+    font-size: 25px;
+}
+.logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 10px;
+}
+.footer {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    padding: 30px;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+@media screen and (max-width: 600px) {
+    .footer {
+        padding: 10px;
+    }
+}
+
+
+.footer .social-icons {
+    display: flex;
+    align-items: center;
+}
+
+.footer .social-icons img {
+    margin-right: 10px;
+}
+
+.footer .social-icons span {
+    margin-right: 10px;
+}
+
+.footer .contact-info {
+    font-style: italic;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+@media only screen and (max-width: 600px) {
+    .footer {
+        flex-direction: column;
+        text-align: center; 
+        
+    }
+
+    .footer .social-icons {
+        margin-bottom: 10px;
+    }
+
+    .footer .social-icons img {
+        width: 30px; 
+        height: auto;
+    }
+}
+.slideshow-container {
+  max-width: 1000px;
+  max-height: 210px;
+  position: relative;
+  margin: auto;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+#img2{
+    width: 374px;
+    height: 272px;
+}
+#img3{
+    width: 374px;
+    height: 272px;
+}
+button {
+ padding: 15px 25px;
+ border: unset;
+ border-radius: 15px;
+ color: #212121;
+ z-index: 1;
+ background: #d8d8d8;
+ position: relative;
+ font-weight: 1000;
+ font-size: 17px;
+ -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms;
+ overflow: hidden;
+ float:right;
+}
+
+button::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ height: 100%;
+ width: 0;
+ border-radius: 15px;
+ background-color: #212121;
+ z-index: -1;
+ -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms
+}
+
+button:hover {
+ color: #e8e8e8;
+}
+
+button:hover::before {
+ width: 100%;
+}
+</style>
+<body>
+
+    
+<div class="header">
+    <div class="logo">
+        <img src="logo.PNG" width="15%" height="15%">
+    </div>   
+    <h2>Ana Sayfa</h2>
+    <span>https://gencbizz.com.tr</span>
+</div>
+<div class="slideshow-container">
+
+    <div class="mySlides fade" id="img1">
+      <img src="https://www.beykoz.bel.tr/medya//News/beykoz_183.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides fade" id="img2">
+      <img src="https://i20.haber7.net/resize/1300x788//haber/haber7/photos/2018/47/beykozda_nereler_gezilir_ne_yenir_1542698895_578.jpg" style="width:99.9%">
+    </div>
+    
+    <div class="mySlides fade" id="img3">
+      <img src="https://cdn2.enuygun.com/media/lib/1200x675/uploads/image/beykoz-53356.webp" style="width:100%">
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+    
+    </div>
+    <br>
+
+
+<div class="cont">
+
+
+<div class="row">
+    <div class="card">
+        <img src="https://cdn.tatilsepeti.com/Files/Images/Tesis/08981/1050X700/tsr08981637269882771744759.jpg">
+        <h2>Polonezköy</h2>
+        <span>
+            Şehirden uzak nefes almak için, yabani kuş sesleri ve yemyeşil tabiat eşliğinde, doğayı ve kültürü aynı anda yaşayabileceğiniz eşsiz bir cennet kösesi, İstanbul’un arka bahçesi.
+        </span>
+        <br><br><a href="/polonezkoy.html"><button>Sayfa</button></a>
+    </div>
+    <div class="card">
+        <img src="https://istanbeautiful.com/tr/wp-content/uploads/kanlica2.jpg">
+        <h2>Kanlıca</h2>
+        <p>Ara sokakları, kafeleri ve yürüyüş yapıp bisiklet sürebileceğiniz sahili ile pek çok aktiviteyi bir arada yapma olanağı sunuyor. Kanlıca’nın ara sokaklarında yürüdüğünüzde küçük dükkânları ve ahşap eski binaları göreceksiniz.</p>
+        <a href="/kanlica.html"><button>Sayfa</button></a>
+     </div>
+</div>
+<div class="row">
+    <div class="card">
+        <img src="https://staticb.yolcu360.com/blog/wp-content/uploads/2018/09/20123927/kavacik.jpg">
+        <h2>Kavacık</h2>
+        <p>Kavacık, artık plazalar ve iş merkezleriyle dolu olmasına rağmen şehir hayatından kaçmak isteyenlerin uğrak noktası olmaya devam ediyor. istanbul'un en sevilen piknik yerlerinden biridir.</p>
+        <a href="/kavacik.html"><button>Sayfa</button></a>
+    </div>
+    <div class="card">
+        <img src="https://isbh.tmgrup.com.tr/sbh/2020/07/04/650x344/beykoz-belediyesi-tarafindan-yapilan-sosyal-mesafe-1593846012306.jpg">
+        <h2>Gümüşsuyu</h2>
+        <p>Gümüşsuyu, İstanbul'da bir semttir. Taksim'den Beşiktaş'a inerken araya Gümüşsuyu denir. Konsolosluklar, otobüs acenteleri, Makina Fakültesi ile Tekstil Fakültesini barındıran İTÜ Gümüşsuyu yerleşkesi bulunmaktadır.</p>
+        <a href="/gumussuyu.html"><button>Sayfa</button></a>
+     </div>
+</div>
+<div class="row">
+    <div class="card">
+        <img src="https://media-cdn.tripadvisor.com/media/photo-s/12/f9/19/e3/orman-ici.jpg">
+        <h2>Tokatköy</h2>
+        <p>Tokatköy, Boğaz’a yakın konumu ve huzur dolu atmosferi ile İstanbullular için ideal bir günübirlik tatil rotası profili çiziyor. Bir televizyon dizisi sayesinde geniş kitlelerin tanıma fırsatı buldukları köy, gerek tarihi gerekse de doğası ile konuklarını büyülüyor.</p>
+        <a href="/tokatkoy.html"><button>Sayfa</button></a>
+    </div>
+    <div class="card">
+        <img src="https://dostbeykoz.com/isDosyalar/2022/11/09/galeri_inci_2plmrf_Zvj3zzVDWI.webp">
+        <h2>İncirköy</h2>
+        <p>İncirköy, İstanbul'da Boğaziçi'nin Anadolu yakasında Beykoz ilçesine bağlı bir mahalledir. Beykoz'un en kalabalık mahallelerindendir. Kuzeyinde Gümüşsuyu, güneyinde ise Paşabahçe bulunur.</p>
+        <a href="/incirkoy.html"><button>Sayfa</button></a>
+     </div>
+     <div class="card">
+        <img src="https://avatars.mds.yandex.net/get-altay/932730/2a00000165d69d3e94688e18f35efe7de863/XXL">
+        <h2>Soğuksu</h2>
+        <p>Soğuksu, İstanbul ilinin Anadolu Yakası'nda bulunan Beykoz ilçesine bağlı bir mahalledir. İdari sınırlarına bakıldığında kuzeyinde İncirköy; batısında Çiğdem; doğusunda ve güneyinde Acarlar; güneydoğusunda ise Çubuklu mahalleleri bulunmaktadır.</p>
+        <a href="/soguksu.html"><button>Sayfa</button></a>
+     </div>
+     <div class="card">
+        <img src="https://yeniizmir.com/wp-content/uploads/2023/11/karsiyaka-ornekkoydeki-projede-onemli-adim-tamamlandi-izmir-kentsel-donusum.jpg">
+        <h2>Örnekköy</h2>
+        <p>Örnekköy mahallesinde gezilecek yerler çoktur. Ülkemizdeki mahallelerin neredeyse tamamı gezip görülecek yerler arasında olup şehir merkezine uzaklığı yakındır.</p>
+        <a href="/ornekkoy.html"><button>Sayfa</button></a>
+     </div>
+     <div class="card">
+        <img src="https://scontent.fsaw2-3.fna.fbcdn.net/v/t1.6435-9/79266967_2555594721335756_8793528681919152128_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=jqHvT4maGuYAX_jOgkJ&_nc_ht=scontent.fsaw2-3.fna&oh=00_AfDzWU8mZpAeEBF5IfWrwCxA22yuIDq-p7JNjLu6kLXvMA&oe=66253EFC">
+        <h2>Yavuzselim</h2>
+        <p>Yavuzselim, İstanbul ilinin Anadolu Yakası'nda bulunan Beykoz ilçesine bağlı bir mahalledir. İdari sınırlarına bakıldığında Çengeldere, Çiftlik, Baklacı mahalleleri ve Polonezköy ile komşudur.</p>
+        <a href="/yavuzselim.html"><button>Sayfa</button></a>
+     </div>
+     <div class="card">
+        <img src="https://www.ozelkalem.com.tr/wp-content/uploads/2020/06/1-MxN8iOYhbtOa3HhXHXte1A@2x.jpeg">
+        <h2>Cumhuriyet</h2>
+        <p>İstanbul'un Anadolu yakasında yer alan Cumhuriyet Köyü, kuzeyde, Öğümce, Bozhane ve Kılıçlı Köyleri, güneyde, Üsküdar ilçesi, doğuda Ömerli Beldesi, batıda Polonezköy ile çevrilidir.</p>
+        <a href="/cumhuriyet.html"><button>Sayfa</button></a>
+     </div>
+     <div class="card">
+        <img src="https://www.yudosk.org/resimx/images/d52ce794c793bf695a5f1d53bdc94097.jpg">    
+        <h2>Mahmutşevket</h2>
+        <p>Yeşillikler içersinde Cennetten bir köşe gibidir. Köye giriş yaptığınızda, köy meydanında kısa bir dinlenme için mükemmel taze çayınızı yudumlayacağınız otantik kahvehaneler mevcuttur.</p>
+        <a href="/mahmutsevket.html"><button>Sayfa</button></a>
+     </div>
+     <div class="card">
+        <img src="https://dostbeykoz.com/isDosyalar/2019/07/25/galeri_deer_lz93bzqenj.jpg">
+        <h2>Dereseki</h2>
+        <p>Doğal güzelliklerinin yanı sıra kaynak suları ile de ünlüdür. Karakulak, Sırmakeş, Deli Osman, Kırklar, Beyaz Pınar, Kirazlı Dermal, ismini taşıyan suların oldukça popüler olduğu ve çok talep gördüğü ifade edilmektedir.</p>
+        <a href="/dereseki.html"><button>Sayfa</button></a>
+     </div>
+     <div class="card">
+        <img src="https://beykozaktuel.com.tr/wp-content/uploads/2021/09/beykoz-trabzonlu-muhtar_3493-690x388.jpg">
+        <h2>İshaklı</h2>
+        <p>Önceleri Kılıçlı mahallesine bağlı bir mahalle olup, 1950 yılından sonra Trabzon ilinden yoğun göç almıştır ve 1980'li yıllarda köy statüsüne kavuşmuştur.</p>
+        <a href="/ishakli.html"><button>Sayfa</button></a>
+     </div>
+     <div class="card">
+        <img src="https://www.prestijprojeler.com/Resim/Haber/ATLPEVM307868e8942dff0b76dc3c82746be20a_big_r.jpg">
+        <h2>Paşamandıra</h2>
+        <p>Köylülerin bir araya gelip kurdukları mandıra ve bunun başında bulunan paşa lakaplı kişiden dolayı Paşamandıra ismini almıştır. Değirmendere koyu ise ismini Hüsnü Çavuş adındaki bir köylünün dere üzerine yaptığı ve uzun yıllar civar köylerine hizmet veren bir su değirmeninden almıştır.</p>
+        <a href="/pasamandira.html"><button>Sayfa</button></a>
+     </div>
+     <div class="card">
+        <img src="https://beykozguncel.com/wp-content/uploads/2024/02/isbeykoz-da-bir-mahalle-daha-hassas-alan-ilan-edildi_5588-4.jpg">
+        <h2>Zerzavatçı</h2>
+        <p>İstanbul'un Beykoz İlçesinde Zerzevatçı adında ismiyle müsemma bir mahalle var ki çeşit çeşit sebze yetiştiriyor.  Yol kenarında tezgah açan teyzeler , kendi ekip biçtikleri mahsulleri İstanbul'un dört bir yanından gelen müşterilere satıyor. </p>
+        <a href="/zerzavatci.html"><button>Sayfa</button></a>
+     </div>
+     <div class="card">
+        <img src="https://www.mehmetakinci.com.tr/wp-content/uploads/2015/01/Poyrazk%C3%B6y-14.jpg">
+        <h2>Poyrazköy</h2>
+        <p>Poyrazköy, Boğaziçi Anadolu kıyısında Karadeniz’e doğru Beykoz‘dan sonra yaklaşık 14 kilometrelik bir orman yolunun sonunda yer alan, doğası ve sevimli plajı ile ünlü, Boğazın en güzel ve şirin köylerinden birisi.</p>
+        <a href="/poyrazkoy.html"><button>Sayfa</button></a>
+     </div>
+
+</div>
+
+</div>
+
+<footer class="footer">
+    <div class="social-icons">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/2048px-Facebook_icon.svg.png" width="1%" height="1%" alt="Facebook">
+        <span>Facebook: rotabizz</span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Instagram-Icon.png/1024px-Instagram-Icon.png" width="1%" height="1%" alt="Instagram">
+        <span>Instagram: rotabizz</span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/2491px-Logo_of_Twitter.svg.png" width="1%" height="1%" alt="Twitter">
+        <span>Twitter: rotabizz</span>
+    </div>
+    <div class="contact-info">
+        İletişim Bilgisi: (0536 698 9708)
+    </div>
+</footer>
+
+<script src="arayuz.js"></script>
+
+</body>
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+</html>
